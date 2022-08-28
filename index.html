@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Interactive card details form</title>
+    <link rel="stylesheet" href="./dist/output.css" />
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body class="text-white h-screen">
+    <section class="flex flex-col md:flex-row h-screen md:space-x-28">
+      <div
+        class="cards bg-mobile bg-no-repeat bg-cover h-60 md:w-[485px] md:h-full flex md:items-center"
+      >
+        <div
+          class="container flex flex-col md:flex-col-reverse items-center justify-center overflow-visible"
+        >
+          <div
+            class="back-side relative w-72 h-40 ml-8 mt-10 md:mt-5 md:ml-[465px]"
+          >
+            <img src="./images/bg-card-back.png" class="max-w-full" alt="" />
+            <p class="cvc absolute top-[71px] left-[228px] text-xs">000</p>
+          </div>
+          <div
+            class="front-side w-72 h-40 mr-8 relative -mt-16 drop-shadow-2xl md:drop-shadow-none md:ml-[350px]"
+          >
+            <img src="./images/bg-card-front.png" alt="" />
+            <img
+              src="./images/card-logo.svg"
+              class="absolute top-5 left-5 w-14"
+              alt=""
+            />
+            <h3
+              class="cardNumber absolute top-1/2 left-0 w-full text-center text-xl font-semibold tracking-[2px]"
+            >
+              0000 0000 0000 0000
+            </h3>
+            <div
+              class="details flex justify-between w-full absolute bottom-5 left-0 px-5 text-sm font-normal"
+            >
+              <p class="cardName uppercase">jane appleseed</p>
+              <p class="exp">00/00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form flex-1 mt-24">
+        <div
+          class="container lastSection flex flex-col justify-center items-center"
+        >
+          <form class="form flex flex-col flex-1 p-8 w-full">
+            <p
+              class="error -mt-20 mb-9 md:mt-0 md:mb-8 bg-red-100 text-red-600 p-2 rounded-sm opacity-0"
+            >
+              incompleted data
+            </p>
+            <div class="relative">
+              <input
+                id="name"
+                required
+                class="peer nameInput w-full mb-8 p-2 placeholder-transparent rounded-lg border border-gray-300 focus:outline-none text-VeryDarkViolet"
+                type="text"
+                maxlength="18"
+                placeholder="cardholder name"
+              />
+              <label
+                for="name"
+                class="text-VeryDarkViolet uppercase text-xs peer-placeholder-shown:text-sm peer-focus:text-xs font-bold absolute -top-4 left-2 -translate-y-1/2 transition-all peer-placeholder-shown:left-4 peer-placeholder-shown:top-1/4 peer-focus:-top-4 peer-focus:left-2"
+              >
+                cardholder name</label
+              >
+            </div>
+            <div class="relative">
+              <input
+                id="number"
+                required
+                class="numberInput peer w-full mb-8 p-2 placeholder-transparent rounded-lg border border-gray-300 text-VeryDarkViolet"
+                maxlength="19"
+                minlength="19"
+                type="text"
+                placeholder="card number"
+              />
+              <label
+                class="text-VeryDarkViolet text-xs font-bold uppercase absolute -top-4 left-2 -translate-y-1/2 transition-all peer-placeholder-shown:left-4 peer-placeholder-shown:top-1/4 peer-placeholder-shown:text-sm peer-focus:text-xs peer-focus:-top-4 peer-focus:left-2"
+                for="number"
+                >card number</label
+              >
+            </div>
+            <div class="flex gap-4">
+              <div class="exp-date relative flex-1">
+                <input
+                  id="exp"
+                  required
+                  class="expInput peer w-full mb-8 p-2 placeholder-transparent rounded-lg overflow-hidden border border-gray-300 focus:outline-none text-VeryDarkViolet"
+                  maxlength="6"
+                  type="text"
+                  placeholder="exp date"
+                />
+                <label
+                  class="text-VeryDarkViolet text-xs peer-placeholder-shown:text-sm peer-focus:text-xs font-bold uppercase absolute -top-4 left-2 -translate-y-1/2 transition-all peer-placeholder-shown:left-4 peer-placeholder-shown:top-1/4 peer-focus:-top-4 peer-focus:left-2"
+                  for="exp"
+                  >exp date</label
+                >
+              </div>
+              <div class="cvc relative flex-1">
+                <input
+                  id="cvc"
+                  required
+                  class="cvcInput peer w-full mb-8 p-2 placeholder-transparent rounded-lg overflow-hidden border border-gray-300 focus:outline-none text-VeryDarkViolet"
+                  maxlength="3"
+                  type="text"
+                  placeholder="exp date"
+                />
+                <label
+                  class="text-VeryDarkViolet text-xs peer-placeholder-shown:text-sm peer-focus:text-xs font-bold uppercase absolute -top-4 left-2 -translate-y-1/2 transition-all peer-placeholder-shown:left-4 peer-placeholder-shown:top-1/4 peer-focus:-top-4 peer-focus:left-2"
+                  for="cvc"
+                  >cvc</label
+                >
+              </div>
+            </div>
+            <button
+              class="submitBtn bg-VeryDarkViolet p-3 rounded-lg"
+              type="submit"
+            >
+              Confirm
+            </button>
+          </form>
+          <!-- <div class="details flex flex-col items-center justify-center">
+            <img src="./images/icon-complete.svg" alt="" />
+            <p
+              class="uppercase text-VeryDarkViolet text-4xl tracking-widest mt-10"
+            >
+              thank you!
+            </p>
+            <p class="text-darkGrayishViolet mt-6">
+              we've added your card details
+            </p>
+            <button
+              class="submitBtn bg-VeryDarkViolet p-3 rounded-lg w-full mt-10"
+              type="submit"
+            >
+              Confirm
+            </button>
+          </div> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- <div class="container">
+      <div
+        class="box bg-slate-300 flex flex-col md:flex-row justify-center items-center gap-10"
+      >
+        <div class="card p-8 flex-1">
+          <h3 class="cardNumber">000 0000 0000 0000</h3>
+          <div class="details flex justify-between">
+            <p class="cardName">card Name</p>
+            <p class="exp">exp</p>
+          </div>
+        </div>
+        <form class="form flex flex-col flex-1 p-8">
+          <div class="relative">
+            <input
+              id="name"
+              class="peer nameInput w-full mb-8 p-2 placeholder-transparent rounded-lg"
+              type="text"
+              placeholder="cardholder name"
+            />
+            <label
+              for="name"
+              class="text-neutral-500 text-xs peer-placeholder-shown:text-sm peer-focus:text-xs font-bold capitalize absolute -top-4 left-2 -translate-y-1/2 transition-all peer-placeholder-shown:left-4 peer-placeholder-shown:top-1/4 peer-focus:-top-4 peer-focus:left-2"
+            >
+              cardholder name</label
+            >
+          </div>
+          <div class="relative">
+            <input
+              id="number"
+              class="numberInput peer w-full mb-8 p-2 placeholder-transparent rounded-lg"
+              maxlength="19"
+              minlength="19"
+              type="text"
+              placeholder="card number"
+            />
+            <label
+              class="text-neutral-500 text-xs font-bold capitalize absolute -top-4 left-2 -translate-y-1/2 transition-all peer-placeholder-shown:left-4 peer-placeholder-shown:top-1/4 peer-placeholder-shown:text-sm peer-focus:text-xs peer-focus:-top-4 peer-focus:left-2"
+              for="number"
+              >card number</label
+            >
+          </div>
+          <div class="relative">
+            <input
+              id="exp"
+              class="expInput peer w-full mb-8 p-2 placeholder-transparent rounded-lg"
+              maxlength="6"
+              type="text"
+              placeholder="exp date"
+            />
+            <label
+              class="text-neutral-500 text-xs peer-placeholder-shown:text-sm peer-focus:text-xs font-bold capitalize absolute -top-4 left-2 -translate-y-1/2 transition-all peer-placeholder-shown:left-4 peer-placeholder-shown:top-1/4 peer-focus:-top-4 peer-focus:left-2"
+              for="exp"
+              >exp date</label
+            >
+          </div>
+          <button class="submitBtn" type="submit">Confirm</button>
+        </form>
+      </div> 
+    </div>
+  -->
+    <script src="./dist/main.js"></script>
+  </body>
+</html>
+<!-- 0000 0000 0000 0000 Jane Appleseed 00/00 000 Cardholder Name e.g. Jane Appleseed
+Card Number e.g. 1234 5678 9123 0000 Exp. Date (MM/YY) MM YY CVC e.g. 123
+Confirm -->
+
+<!-- Completed state start -->
+
+<!-- Thank you! We've added your card details Continue -->

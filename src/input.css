@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body{
+
+  font-family: 'Space Grotesk', sans-serif;
+}
+/*  Linear gradient (active input border): hsl(249, 99%, 64%) to hsl(278, 94%, 30%) */
+input:focus{
+  outline: none;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  border-image: linear-gradient(hsl(249, 99%, 64%) , hsl(278, 94%, 30%))1;
+  overflow: hidden;
+}
